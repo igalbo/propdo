@@ -16,11 +16,14 @@ export function ViewProvider({ children }) {
   };
 
   const handleRooms = (num) => {
-    setRooms((prevRooms) =>
-      prevRooms.includes(num)
-        ? prevRooms.filter((currentNum) => currentNum !== num)
-        : prevRooms.push(num)
-    );
+    setRooms((prevRooms) => {
+      if (prevRooms.length > 0 && prevRooms.includes(num)) {
+        return prevRooms.filter((room) => room !== num);
+      } else {
+        prevRooms.push(num);
+      }
+    });
+    console.log(rooms);
   };
 
   return (

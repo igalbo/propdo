@@ -12,6 +12,7 @@ const useFetchTransactions = () => {
       setTransactions(data?.properties);
       setIsLoading(false);
     }
+
     getTransactions();
   }, []);
 
