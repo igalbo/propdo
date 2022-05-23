@@ -1,7 +1,5 @@
 import { useEffect, useState } from "react";
 
-import React from "react";
-
 const useFetchTransactions = () => {
   const [transactions, setTransactions] = useState({});
   const [isLoading, setIsLoading] = useState(false);
@@ -11,7 +9,7 @@ const useFetchTransactions = () => {
       setIsLoading(true);
       const response = await fetch("transactions.json");
       const data = await response.json();
-      setTransactions([data?.properties]);
+      setTransactions(data?.properties);
       setIsLoading(false);
     }
     getTransactions();
