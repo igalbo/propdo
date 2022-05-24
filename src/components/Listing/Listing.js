@@ -1,17 +1,20 @@
 import React from "react";
 import Card from "@mui/material/Card";
-import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
-import Button from "@mui/material/Button";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemText from "@mui/material/ListItemText";
 import ListItemAvatar from "@mui/material/ListItemAvatar";
 import Avatar from "@mui/material/Avatar";
-import ImageIcon from "@mui/icons-material/Image";
-import WorkIcon from "@mui/icons-material/Work";
-import BeachAccessIcon from "@mui/icons-material/BeachAccess";
+import HouseSidingIcon from "@mui/icons-material/HouseSiding";
+import DirectionsCarIcon from "@mui/icons-material/DirectionsCar";
+import HomeIcon from "@mui/icons-material/Home";
+import SellIcon from "@mui/icons-material/Sell";
+import ElevatorIcon from "@mui/icons-material/Elevator";
+import SquareFootIcon from "@mui/icons-material/SquareFoot";
+import StairsIcon from "@mui/icons-material/Stairs";
+import BedIcon from "@mui/icons-material/Bed";
 import Divider from "@mui/material/Divider";
 
 const Listing = ({
@@ -46,7 +49,7 @@ const Listing = ({
           <ListItem>
             <ListItemAvatar>
               <Avatar>
-                <ImageIcon />
+                <HomeIcon />
               </Avatar>
             </ListItemAvatar>
             <ListItemText primary="Address" secondary={address} />
@@ -55,7 +58,7 @@ const Listing = ({
           <ListItem>
             <ListItemAvatar>
               <Avatar>
-                <WorkIcon />
+                <SellIcon />
               </Avatar>
             </ListItemAvatar>
             <ListItemText primary="Price" secondary={price} />
@@ -64,7 +67,7 @@ const Listing = ({
           <ListItem>
             <ListItemAvatar>
               <Avatar>
-                <BeachAccessIcon />
+                <SquareFootIcon />
               </Avatar>
             </ListItemAvatar>
             <ListItemText primary="Total Area" secondary={sqm} />
@@ -73,7 +76,7 @@ const Listing = ({
           <ListItem>
             <ListItemAvatar>
               <Avatar>
-                <BeachAccessIcon />
+                <BedIcon />
               </Avatar>
             </ListItemAvatar>
             <ListItemText primary="# of Rooms" secondary={num_rooms} />
@@ -89,7 +92,7 @@ const Listing = ({
           <ListItem>
             <ListItemAvatar>
               <Avatar>
-                <ImageIcon />
+                <StairsIcon />
               </Avatar>
             </ListItemAvatar>
             <ListItemText primary="Floor" secondary={floor} />
@@ -98,7 +101,7 @@ const Listing = ({
           <ListItem>
             <ListItemAvatar>
               <Avatar>
-                <WorkIcon />
+                <HouseSidingIcon />
               </Avatar>
             </ListItemAvatar>
             <ListItemText primary="# of Floors" secondary={num_floors} />
@@ -107,7 +110,7 @@ const Listing = ({
           <ListItem>
             <ListItemAvatar>
               <Avatar>
-                <BeachAccessIcon />
+                <ElevatorIcon />
               </Avatar>
             </ListItemAvatar>
             <ListItemText primary="Elevators" secondary={elevator} />
@@ -116,17 +119,13 @@ const Listing = ({
           <ListItem>
             <ListItemAvatar>
               <Avatar>
-                <BeachAccessIcon />
+                <DirectionsCarIcon />
               </Avatar>
             </ListItemAvatar>
             <ListItemText primary="Parking Spots" secondary={parking} />
           </ListItem>
         </List>
       </CardContent>
-      <CardActions>
-        <Button size="small">Share</Button>
-        <Button size="small">Learn More</Button>
-      </CardActions>
     </Card>
   );
 };

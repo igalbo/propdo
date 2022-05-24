@@ -7,7 +7,6 @@ import useFetchTransactions from "../hooks/useFetchTransactions";
 import FiltersRow from "../components/FiltersRow/FiltersRow";
 
 const RealEstate = () => {
-  const navigate = useNavigate();
   const { transactions, isLoading } = useFetchTransactions();
   const [filteredListings, setFilteredListings] = useState([transactions]);
   const { search, sort, rooms } = useContext(ViewContext);
