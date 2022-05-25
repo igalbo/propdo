@@ -1,29 +1,48 @@
-import React, { useState } from "react";
-import ReactMapGL from "react-map-gl";
+import { Button } from "@mui/material";
+import { useRef, useState } from "react";
+import { Map as MapView } from "react-map-gl";
 
-const REACT_APP_MAPBOX_TOKEN =
+const MAPBOX_TOKEN =
   "pk.eyJ1IjoiaWdhbGIiLCJhIjoiY2wzbHk2bnRnMDFwajNrcWZpcWFheTlnbyJ9.oEZhexetAjQtXXWRTEXdRg";
 
-const Map = () => {
+export default function Map() {
+  const mapRef = useRef(null);
+  const formRef = useRef();
   const [viewport, setViewport] = useState({
-    latitude: 45.1111,
-    longtitude: -75.1111,
-    width: "100vw",
-    height: "100vh",
-    zoom: 10,
+    latitude: 31.0461,
+    longitude: 34.8516,
+    zoom: 7,
   });
+  const [gpsValue, setGpsValue] = useState([]);
+
+  const handleClick = (event) => {
+    setGpsValue([event.lngLat.lat, event.lngLat.lng]);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    console.log(formRef);
+  };
+
   return (
-    <div className="map-page">
-      <ReactMapGL
+    <div style={{ height: "70vh" }}>
+      <div className="coordinates-box">
+        <form onSubmit={handleSubmit} ref={formRef}>
+          <input type="text" value={gpsValue[0]} />
+          <input type="text" />
+
+          <Button type="submit">Submit</Button>
+        </form>
+      </div>
+      <MapView
+        style={{ height: "90%" }}
         {...viewport}
-        mapboxAccessToken={REACT_APP_MAPBOX_TOKEN}
-        mapStyle="mapbox://styles/mapbox/streets-v11"
-        onViewportChange={(viewport) => {
-          setViewport(viewport);
-        }}
-      ></ReactMapGL>
+        mapStyle="mapbox://styles/mapbox/dark-v9"
+        mapboxAccessToken={MAPBOX_TOKEN}
+        onClick={handleClick}
+        // ref={mapRef}
+      ></MapView>
     </div>
   );
-};
-
-export default Map;
+}

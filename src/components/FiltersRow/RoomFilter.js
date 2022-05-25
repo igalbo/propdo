@@ -35,7 +35,7 @@ export default function MultipleSelect() {
 
   return (
     <div>
-      <FormControl sx={{ minWidth: 200 }}>
+      <FormControl sx={{ minWidth: 223 }}>
         <InputLabel id="multiple-room-label">Rooms </InputLabel>
         <Select
           labelId="multiple-room-label"

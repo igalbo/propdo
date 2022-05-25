@@ -13,7 +13,8 @@
 }
 
 .filters-row__search {
-  max-width: 280px;
+  max-width: 300px;
+  min-width: 200px;
   background-color: white;
   border-radius: 5px;
 }

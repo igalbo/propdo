@@ -14,12 +14,16 @@ const FiltersRow = () => {
         id="outlined-basic"
         onChange={(e) => handleSearch(e.target.value)}
         variant="outlined"
-        fullWidth
-        label="Search"
+        // fullWidth
+        label="Search address"
         value={search}
       />
       <RoomFilter />
-      <Button variant="contained" onClick={handleSort} sx={{ minWidth: 200 }}>
+      <Button
+        variant="contained"
+        onClick={handleSort}
+        sx={{ minWidth: 200, maxWidth: 300 }}
+      >
         Sort By Price: {sort === "asc" ? "descending" : "ascending"}
       </Button>
     </div>
