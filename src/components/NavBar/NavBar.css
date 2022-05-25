@@ -33,11 +33,12 @@
 }
 
 .nav li {
-  border-radius: 10px;
+  border-radius: 15px 0 15px 0;
   padding: 10px;
 }
 
 .nav li.active {
+  border: 5px solid #777;
   background-color: #555;
 }
 
