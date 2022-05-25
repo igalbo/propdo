@@ -1,16 +1,16 @@
 import React, { useContext } from "react";
-import { TextField } from "@mui/material";
-import "./FiltersRow.css";
+import { TextField, Button } from "@mui/material";
 import RoomFilter from "./RoomFilter";
 import ViewContext from "../../ViewContext";
+import "./FiltersRow.css";
 
 const FiltersRow = () => {
   const { search, handleSearch, sort, handleSort } = useContext(ViewContext);
 
   return (
-    <div>
+    <div className="filters-row">
       <TextField
-        className="real-estate__filters__search"
+        className="filters-row__search"
         id="outlined-basic"
         onChange={(e) => handleSearch(e.target.value)}
         variant="outlined"
@@ -19,9 +19,9 @@ const FiltersRow = () => {
         value={search}
       />
       <RoomFilter />
-      <button onClick={handleSort}>
-        Sort {sort === "desc" ? "ascending" : "descending"}
-      </button>
+      <Button variant="contained" onClick={handleSort} sx={{ minWidth: 200 }}>
+        Sort By Price: {sort === "asc" ? "descending" : "ascending"}
+      </Button>
     </div>
   );
 };

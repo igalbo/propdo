@@ -5,6 +5,7 @@ import Map from "./pages/Map";
 import Error from "./pages/Error";
 import Home from "./pages/Home";
 import NavBar from "./components/NavBar/NavBar";
+import propdoLogo from "./assets/propdo-logo-white.png";
 import "./App.css";
 
 function App() {
@@ -20,7 +21,11 @@ function App() {
             <Route path="*" element={<Error />} />
           </Routes>
         </div>
-        <div>Footer</div>
+        <footer>
+          Made by Igal Bogopolsky <a href="https://igal.co">igal.co</a> for
+          Propdo&nbsp;
+          <img src={propdoLogo} alt="footer-logo" height={24} />
+        </footer>
       </Router>
     </ViewProvider>
   );

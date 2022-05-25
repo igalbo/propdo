@@ -23,11 +23,20 @@ const RealEstate = () => {
             return rooms.includes(Number(item.num_rooms));
           })
           .sort((a, b) => {
+            let first =
+              typeof a.price === "string"
+                ? Number(a.price.replaceAll(",", ""))
+                : a.price;
+            let second =
+              typeof b.price === "string"
+                ? Number(b.price.replaceAll(",", ""))
+                : b.price;
+
             if (sort === "asc") {
-              return a.price - b.price;
+              return first - second;
             }
             if (sort === "desc") {
-              return b.price - a.price;
+              return second - first;
             }
             return 0;
           })
@@ -39,7 +48,11 @@ const RealEstate = () => {
       key={index}
       address={item.address}
       image={`prop${Math.ceil(Math.random() * 5)}.jpg`}
-      price={item.price}
+      price={
+        typeof item.price === "string"
+          ? Number(item.price.replaceAll(",", ""))
+          : item.price
+      }
       sqm={item.sqm}
       num_rooms={item.num_rooms}
       floor={item.floor}
@@ -52,13 +65,21 @@ const RealEstate = () => {
 
   return (
     <div className="real-estate">
-      <div className="real-estate__filters">
+      <div>
         <FiltersRow />
       </div>
       {isLoading ? (
         <LinearProgress />
       ) : (
-        <div className="real-estate__listings">{listings}</div>
+        <div
+          style={{
+            display: "flex",
+            flexFlow: "row wrap",
+            justifyContent: "space-around",
+          }}
+        >
+          {listings}
+        </div>
       )}
     </div>
   );

@@ -8,8 +8,7 @@ const NavBar = () => {
     <nav className="nav">
       <Link to="/" className="site-title">
         <img src={propdoLogo} alt="propdo" width={64} />
-
-        <h1>propdo houses</h1>
+        propdo houses
       </Link>
       <ul>
         <CustomLink to="/real-estate">real estate</CustomLink>

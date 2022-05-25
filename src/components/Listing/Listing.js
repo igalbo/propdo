@@ -30,7 +30,12 @@ const Listing = ({
   id = 0,
 }) => {
   return (
-    <Card sx={{ maxWidth: 420 }}>
+    <Card
+      style={{
+        marginBottom: "20px",
+        minWidth: 420,
+      }}
+    >
       <CardMedia
         component="img"
         height="185"

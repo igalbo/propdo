@@ -35,16 +35,17 @@ export default function MultipleSelect() {
 
   return (
     <div>
-      <FormControl sx={{ m: 1, width: 300 }}>
-        <InputLabel id="demo-multiple-room-label">Rooms</InputLabel>
+      <FormControl sx={{ minWidth: 200 }}>
+        <InputLabel id="multiple-room-label">Rooms </InputLabel>
         <Select
-          labelId="demo-multiple-room-label"
-          id="demo-multiple-room"
+          labelId="multiple-room-label"
+          id="multiple-room"
           multiple
           value={rooms}
           onChange={handleRooms}
           input={<OutlinedInput label="Room" />}
           MenuProps={MenuProps}
+          sx={{ backgroundColor: "white" }}
         >
           {totalRooms.length > 0 &&
             totalRooms.map((room) => (
