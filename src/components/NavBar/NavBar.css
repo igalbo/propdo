@@ -1,23 +1,30 @@
+@font-face {
+  font-family: "yaro_thin";
+  src: url("/src/assets/fonts/yaro-thin.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
 .nav {
-  background-color: #333;
+  background-image: linear-gradient(#001145, #3553ad);
   color: white;
   display: flex;
   justify-content: space-between;
   align-items: stretch;
   gap: 2rem;
-  padding: 1rem 3rem;
+  padding: 0 3rem;
   margin: 0 1rem;
   border-radius: 0 0 20px 20px;
 }
 
 .site-title {
-  font-size: 2rem;
+  font-family: "yaro_thin";
+  font-size: 1.5rem;
   gap: 20px;
 }
 
 .nav ul {
   padding: 0;
-  margin: 0;
   list-style: none;
   display: flex;
   gap: 3rem;
@@ -33,15 +40,20 @@
 }
 
 .nav li {
+  font-family: "yaro_thin";
   border-radius: 15px 0 15px 0;
   padding: 10px;
 }
 
 .nav li.active {
-  border: 5px solid #777;
-  background-color: #555;
+  border: 2px solid #fff;
+  background-color: #001145;
 }
 
 .nav li:hover {
-  background-color: #777;
+  background-color: #3553ad;
+}
+
+.logo {
+  size: 60px;
 }

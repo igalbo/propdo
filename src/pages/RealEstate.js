@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import LinearProgress from "@mui/material/LinearProgress";
 
 import ViewContext from "../ViewContext";
 import Listing from "../components/Listing/Listing";
@@ -16,6 +16,12 @@ const RealEstate = () => {
       setFilteredListings(
         transactions
           .filter((item) => item.address.includes(search))
+          .filter((item) => {
+            if (rooms.length === 0) {
+              return true;
+            }
+            return rooms.includes(Number(item.num_rooms));
+          })
           .sort((a, b) => {
             if (sort === "asc") {
               return a.price - b.price;
@@ -26,7 +32,7 @@ const RealEstate = () => {
             return 0;
           })
       );
-  }, [transactions, search, sort]);
+  }, [transactions, search, sort, rooms]);
 
   const listings = filteredListings?.map((item, index) => (
     <Listing
@@ -46,11 +52,14 @@ const RealEstate = () => {
 
   return (
     <div className="real-estate">
-      <p>Real estate page</p>
       <div className="real-estate__filters">
         <FiltersRow />
       </div>
-      <div className="real-estate__listings">{listings}</div>
+      {isLoading ? (
+        <LinearProgress />
+      ) : (
+        <div className="real-estate__listings">{listings}</div>
+      )}
     </div>
   );
 };

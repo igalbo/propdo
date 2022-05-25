@@ -29,7 +29,6 @@ const Listing = ({
   parking = 0,
   id = 0,
 }) => {
-  const hebAddress = address.replace("\\", "''");
   return (
     <Card sx={{ maxWidth: 420 }}>
       <CardMedia

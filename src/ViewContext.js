@@ -15,15 +15,14 @@ export function ViewProvider({ children }) {
     setSort((prevSort) => (prevSort === "asc" ? "desc" : "asc"));
   };
 
-  const handleRooms = (num) => {
-    setRooms((prevRooms) => {
-      if (prevRooms.length > 0 && prevRooms.includes(num)) {
-        return prevRooms.filter((room) => room !== num);
-      } else {
-        prevRooms.push(num);
-      }
-    });
-    console.log(rooms);
+  const handleRooms = (event) => {
+    const {
+      target: { value },
+    } = event;
+    setRooms(
+      // On autofill we get a stringified value.
+      typeof value === "string" ? value.split(",") : value
+    );
   };
 
   return (
