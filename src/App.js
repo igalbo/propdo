@@ -1,4 +1,4 @@
-import { HashRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import { ViewProvider } from "./ViewContext";
 import RealEstate from "./pages/RealEstate";
 import Map from "./pages/Map";
