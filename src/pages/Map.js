@@ -1,48 +1,53 @@
-import { Button } from "@mui/material";
+import { Button, TextField } from "@mui/material";
 import { useRef, useState } from "react";
 import { Map as MapView } from "react-map-gl";
 
 const MAPBOX_TOKEN =
-  "pk.eyJ1IjoiaWdhbGIiLCJhIjoiY2wzbHk2bnRnMDFwajNrcWZpcWFheTlnbyJ9.oEZhexetAjQtXXWRTEXdRg";
+    "pk.eyJ1IjoiaWdhbGIiLCJhIjoiY2wzbHk2bnRnMDFwajNrcWZpcWFheTlnbyJ9.oEZhexetAjQtXXWRTEXdRg";
 
 export default function Map() {
-  const mapRef = useRef(null);
-  const formRef = useRef();
-  const [viewport, setViewport] = useState({
-    latitude: 31.0461,
-    longitude: 34.8516,
-    zoom: 7,
-  });
-  const [gpsValue, setGpsValue] = useState([]);
+    const formRef = useRef();
+    const [viewport, setViewport] = useState({
 
-  const handleClick = (event) => {
-    setGpsValue([event.lngLat.lat, event.lngLat.lng]);
-  };
+        latitude: 31.0461,
+        longitude: 34.8516,
+        zoom: 7,
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+    });
+    const [gpsLat, setGpsLat] = useState("");
+    const [gpsLng, setGpsLng] = useState("");
 
-    console.log(formRef);
-  };
+    const handleClick = (event) => {
+        setGpsLat(event.lngLat.lat.toFixed(4))
+        setGpsLng(event.lngLat.lng.toFixed(4))
+    };
 
-  return (
-    <div style={{ height: "70vh" }}>
-      <div className="coordinates-box">
-        <form onSubmit={handleSubmit} ref={formRef}>
-          <input type="text" value={gpsValue[0]} />
-          <input type="text" />
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        setViewport({ latitude: formRef.current[0].value, longitude: formRef.current[2].value, zoom: 7 });
+    };
 
-          <Button type="submit">Submit</Button>
-        </form>
-      </div>
-      <MapView
-        style={{ height: "90%" }}
-        {...viewport}
-        mapStyle="mapbox://styles/mapbox/dark-v9"
-        mapboxAccessToken={MAPBOX_TOKEN}
-        onClick={handleClick}
-        // ref={mapRef}
-      ></MapView>
-    </div>
-  );
+    return (
+        <div style={{ height: "1000px" }}>
+            <div className="coordinates-box" style={{
+                margin: "10px"
+            }}>
+                <form onSubmit={handleSubmit} ref={formRef}>
+                    <TextField id="lat" label="Latitude" type="text" value={gpsLat} onChange={(e) => setGpsLat(Number(e.target.value).toFixed(4))} />
+                    <TextField id="lng" label="Longitude" type="text" value={gpsLng} onChange={(e) => setGpsLng(Number(e.target.value).toFixed(4))} />
+                    <Button style={{ padding: "15px" }} type="submit" variant="contained">Submit</Button>
+                </form>
+            </div>
+            <MapView
+
+                style={{ height: "80%" }}
+                {...viewport}
+                mapStyle="mapbox://styles/mapbox/dark-v9"
+                mapboxAccessToken={MAPBOX_TOKEN}
+                onClick={handleClick}
+                onMove={(newViewport) => setViewport(newViewport)}
+            // ref={mapRef}
+            ></MapView>
+        </div>
+    );
 }
