@@ -9,7 +9,7 @@ const useFetchTransactions = () => {
     async function getTransactions() {
       let roomOptions = new Set();
       setIsLoading(true);
-      const response = await fetch("transactions.json");
+      const response = await fetch("https://raw.githubusercontent.com/igalbo/propdo/main/public/transactions.json");
       const data = await response.json();
       setTransactions(data?.properties);
 

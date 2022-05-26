@@ -18,120 +18,120 @@ import BedIcon from "@mui/icons-material/Bed";
 import Divider from "@mui/material/Divider";
 
 const Listing = ({
-  image = "prop1.jpg",
-  address = "Address",
-  price = 0,
-  sqm = 0,
-  num_rooms = 0,
-  floor = 0,
-  num_floors = 0,
-  elevator = 0,
-  parking = 0,
-  id = 0,
+    image = "prop1.jpg",
+    address = "Address",
+    price = 0,
+    sqm = 0,
+    num_rooms = 0,
+    floor = 0,
+    num_floors = 0,
+    elevator = 0,
+    parking = 0,
+    id = 0,
 }) => {
-  return (
-    <Card
-      style={{
-        marginBottom: "20px",
-        minWidth: 420,
-      }}
-    >
-      <CardMedia
-        component="img"
-        height="185"
-        image={`images/${image}`}
-        alt="prop"
-      />
-      <CardContent sx={{ display: "flex", flexDirection: "row" }}>
-        <List
-          sx={{
-            width: "50%",
-            maxWidth: 200,
-            bgcolor: "background.paper",
-          }}
+    return (
+        <Card
+            style={{
+                marginBottom: "20px",
+                minWidth: 420,
+            }}
         >
-          <ListItem>
-            <ListItemAvatar>
-              <Avatar>
-                <HomeIcon />
-              </Avatar>
-            </ListItemAvatar>
-            <ListItemText primary="Address" secondary={address} />
-          </ListItem>
-          <Divider variant="inset" component="li" />
-          <ListItem>
-            <ListItemAvatar>
-              <Avatar>
-                <SellIcon />
-              </Avatar>
-            </ListItemAvatar>
-            <ListItemText primary="Price" secondary={price} />
-          </ListItem>
-          <Divider variant="inset" component="li" />
-          <ListItem>
-            <ListItemAvatar>
-              <Avatar>
-                <SquareFootIcon />
-              </Avatar>
-            </ListItemAvatar>
-            <ListItemText primary="Total Area" secondary={sqm} />
-          </ListItem>
-          <Divider variant="inset" component="li" />
-          <ListItem>
-            <ListItemAvatar>
-              <Avatar>
-                <BedIcon />
-              </Avatar>
-            </ListItemAvatar>
-            <ListItemText primary="# of Rooms" secondary={num_rooms} />
-          </ListItem>
-        </List>
-        <List
-          sx={{
-            width: "50%",
-            maxWidth: 200,
-            bgcolor: "background.paper",
-          }}
-        >
-          <ListItem>
-            <ListItemAvatar>
-              <Avatar>
-                <StairsIcon />
-              </Avatar>
-            </ListItemAvatar>
-            <ListItemText primary="Floor" secondary={floor} />
-          </ListItem>
-          <Divider variant="inset" component="li" />
-          <ListItem>
-            <ListItemAvatar>
-              <Avatar>
-                <HouseSidingIcon />
-              </Avatar>
-            </ListItemAvatar>
-            <ListItemText primary="# of Floors" secondary={num_floors} />
-          </ListItem>
-          <Divider variant="inset" component="li" />
-          <ListItem>
-            <ListItemAvatar>
-              <Avatar>
-                <ElevatorIcon />
-              </Avatar>
-            </ListItemAvatar>
-            <ListItemText primary="Elevators" secondary={elevator} />
-          </ListItem>
-          <Divider variant="inset" component="li" />
-          <ListItem>
-            <ListItemAvatar>
-              <Avatar>
-                <DirectionsCarIcon />
-              </Avatar>
-            </ListItemAvatar>
-            <ListItemText primary="Parking Spots" secondary={parking} />
-          </ListItem>
-        </List>
-      </CardContent>
-    </Card>
-  );
+            <CardMedia
+                component="img"
+                height="185"
+                image={`https://raw.githubusercontent.com/igalbo/propdo/main/public/images/${image}`}
+                alt="prop"
+            />
+            <CardContent sx={{ display: "flex", flexDirection: "row" }}>
+                <List
+                    sx={{
+                        width: "50%",
+                        maxWidth: 200,
+                        bgcolor: "background.paper",
+                    }}
+                >
+                    <ListItem>
+                        <ListItemAvatar>
+                            <Avatar>
+                                <HomeIcon />
+                            </Avatar>
+                        </ListItemAvatar>
+                        <ListItemText primary="Address" secondary={address} />
+                    </ListItem>
+                    <Divider variant="inset" component="li" />
+                    <ListItem>
+                        <ListItemAvatar>
+                            <Avatar>
+                                <SellIcon />
+                            </Avatar>
+                        </ListItemAvatar>
+                        <ListItemText primary="Price" secondary={price} />
+                    </ListItem>
+                    <Divider variant="inset" component="li" />
+                    <ListItem>
+                        <ListItemAvatar>
+                            <Avatar>
+                                <SquareFootIcon />
+                            </Avatar>
+                        </ListItemAvatar>
+                        <ListItemText primary="Total Area" secondary={sqm} />
+                    </ListItem>
+                    <Divider variant="inset" component="li" />
+                    <ListItem>
+                        <ListItemAvatar>
+                            <Avatar>
+                                <BedIcon />
+                            </Avatar>
+                        </ListItemAvatar>
+                        <ListItemText primary="# of Rooms" secondary={num_rooms} />
+                    </ListItem>
+                </List>
+                <List
+                    sx={{
+                        width: "50%",
+                        maxWidth: 200,
+                        bgcolor: "background.paper",
+                    }}
+                >
+                    <ListItem>
+                        <ListItemAvatar>
+                            <Avatar>
+                                <StairsIcon />
+                            </Avatar>
+                        </ListItemAvatar>
+                        <ListItemText primary="Floor" secondary={floor} />
+                    </ListItem>
+                    <Divider variant="inset" component="li" />
+                    <ListItem>
+                        <ListItemAvatar>
+                            <Avatar>
+                                <HouseSidingIcon />
+                            </Avatar>
+                        </ListItemAvatar>
+                        <ListItemText primary="# of Floors" secondary={num_floors} />
+                    </ListItem>
+                    <Divider variant="inset" component="li" />
+                    <ListItem>
+                        <ListItemAvatar>
+                            <Avatar>
+                                <ElevatorIcon />
+                            </Avatar>
+                        </ListItemAvatar>
+                        <ListItemText primary="Elevators" secondary={elevator} />
+                    </ListItem>
+                    <Divider variant="inset" component="li" />
+                    <ListItem>
+                        <ListItemAvatar>
+                            <Avatar>
+                                <DirectionsCarIcon />
+                            </Avatar>
+                        </ListItemAvatar>
+                        <ListItemText primary="Parking Spots" secondary={parking} />
+                    </ListItem>
+                </List>
+            </CardContent>
+        </Card>
+    );
 };
 
 export default Listing;

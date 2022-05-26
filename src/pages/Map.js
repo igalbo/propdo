@@ -1,6 +1,9 @@
 import { Button, TextField } from "@mui/material";
 import { useRef, useState } from "react";
 import { Map as MapView } from "react-map-gl";
+import mapboxgl from "mapbox-gl";
+// eslint-disable-next-line import/no-webpack-loader-syntax
+mapboxgl.workerClass = require('worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker').default;
 
 const MAPBOX_TOKEN =
     "pk.eyJ1IjoiaWdhbGIiLCJhIjoiY2wzbHk2bnRnMDFwajNrcWZpcWFheTlnbyJ9.oEZhexetAjQtXXWRTEXdRg";
