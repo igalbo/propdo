@@ -4,7 +4,11 @@ import RealEstate from "./pages/RealEstate";
 import Map from "./pages/Map";
 import NavBar from "./components/NavBar/NavBar";
 import propdoLogo from "./assets/propdo-logo-white.png";
+import mapboxgl from "mapbox-gl";
 import "./App.css";
+// eslint-disable-next-line import/no-webpack-loader-syntax
+mapboxgl.workerClass = require('worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker').default;
+
 
 function App() {
   return (
