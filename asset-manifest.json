@@ -1,18 +1,17 @@
 {
   "files": {
     "main.css": "/propdo/static/css/main.bcb331b0.css",
-    "main.js": "/propdo/static/js/main.630c8622.js",
-    "static/js/483.f48edc9b.chunk.js": "/propdo/static/js/483.f48edc9b.chunk.js",
+    "main.js": "/propdo/static/js/main.c6da41e4.js",
     "static/js/787.5b9fad72.chunk.js": "/propdo/static/js/787.5b9fad72.chunk.js",
+    "static/js/mapbox-gl-csp-worker.51b80b43.worker.js": "/propdo/static/js/mapbox-gl-csp-worker.51b80b43.worker.js",
     "static/media/yaro-thin.woff2": "/propdo/static/media/yaro-thin.f9e6cf951914103831c9.woff2",
     "index.html": "/propdo/index.html",
     "main.bcb331b0.css.map": "/propdo/static/css/main.bcb331b0.css.map",
-    "main.630c8622.js.map": "/propdo/static/js/main.630c8622.js.map",
-    "483.f48edc9b.chunk.js.map": "/propdo/static/js/483.f48edc9b.chunk.js.map",
+    "main.c6da41e4.js.map": "/propdo/static/js/main.c6da41e4.js.map",
     "787.5b9fad72.chunk.js.map": "/propdo/static/js/787.5b9fad72.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.bcb331b0.css",
-    "static/js/main.630c8622.js"
+    "static/js/main.c6da41e4.js"
   ]
 }
